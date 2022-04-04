@@ -24,6 +24,7 @@ a {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url("../fonts/poppins-v19-latin-regular.eot"); /* IE9 Compat Modes */
   src: local(""),
     url("../fonts/poppins-v19-latin-regular.eot?#iefix")
@@ -43,6 +44,7 @@ a {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
+  font-display: swap;
   src: url("../fonts/poppins-v19-latin-600.eot"); /* IE9 Compat Modes */
   src: local(""),
     url("../fonts/poppins-v19-latin-600.eot?#iefix") format("embedded-opentype"),
@@ -60,6 +62,7 @@ a {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 800;
+  font-display: swap;
   src: url("../fonts/poppins-v19-latin-800.eot"); /* IE9 Compat Modes */
   src: local(""),
     url("../fonts/poppins-v19-latin-800.eot?#iefix") format("embedded-opentype"),
@@ -101,6 +104,7 @@ a {
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: local("Material Icons"), local("MaterialIcons-Regular"),
     url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
