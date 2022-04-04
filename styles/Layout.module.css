@@ -1,0 +1,11 @@
+.grid {
+  padding: var(--space-m);
+  display: grid;
+  grid-gap: var(--space-ml) var(--space-m);
+  grid-auto-rows: 200px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.page {
+  padding: var(--space-m);
+}

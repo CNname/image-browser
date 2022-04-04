@@ -1,0 +1,52 @@
+.nav {
+  position: sticky;
+  top: 0;
+  max-width: 100%;
+  z-index: 10;
+  background: white;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--space-m);
+  margin-top: 4rem;
+}
+
+.header {
+  flex: 1 0 100px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header h1:hover {
+  color: var(--color-blue);
+  cursor: pointer;
+  max-width: fit-content;
+}
+
+.actions {
+  align-self: flex-end;
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  margin-left: var(--space-ml);
+  transition: color 0.2s ease-in-out;
+}
+
+.action:hover {
+  color: var(--color-blue);
+  cursor: pointer;
+}
+
+.action > span:first-child {
+  margin-right: 0.2rem;
+}
