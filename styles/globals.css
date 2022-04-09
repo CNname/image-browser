@@ -8,6 +8,13 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+a:hover {
+  color: var(--color-blue);
+  cursor: pointer;
 }
 
 * {

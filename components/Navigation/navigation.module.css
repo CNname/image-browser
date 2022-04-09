@@ -2,8 +2,13 @@
   position: sticky;
   top: 0;
   max-width: 100%;
+  width: 100%;
   z-index: 10;
   background: var(--color-white);
+  height: var(--nav-height);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .container {
@@ -11,12 +16,15 @@
   align-items: center;
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: var(--space-m);
-  margin-top: 4rem;
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--space-m);
 }
 
 .header {
   flex: 1 0 100px;
+  width: 100%;
+  height: 10;
 }
 
 .header h1 {

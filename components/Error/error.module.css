@@ -1,0 +1,15 @@
+.error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error h1 {
+  font-size: 4rem;
+  margin-bottom: var(--space-m);
+}
+
+.error p {
+  margin-bottom: var(--space-m);
+  margin-top: 0;
+}

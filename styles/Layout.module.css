@@ -8,4 +8,5 @@
 
 .page {
   padding: var(--space-m);
+  min-height: calc(100vh - var(--nav-height) - var(--footer-height));
 }
