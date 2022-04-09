@@ -5,6 +5,13 @@ const nextConfig = {
   images: {
     domains: ["via.placeholder.com"],
   },
+  compiler: {
+    reactRemoveProperties: true,
+  },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };
 
 module.exports = nextConfig;
