@@ -24,17 +24,16 @@
 .header {
   flex: 1 0 100px;
   width: 100%;
-  height: 10;
 }
 
-.header h1 {
+.appName {
   margin: 0;
+  max-width: fit-content;
 }
 
-.header h1:hover {
-  color: var(--color-blue);
+.appName:hover {
   cursor: pointer;
-  max-width: fit-content;
+  color: var(--color-blue);
 }
 
 .actions {

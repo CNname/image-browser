@@ -18,9 +18,11 @@ export type Photo = {
 type PhotosProps = {
   photos: Photo[];
   apiUrl: string;
+  error: string | null;
 };
 
-const Photos = ({ photos, apiUrl }: PhotosProps) => {
+const Photos = ({ photos, apiUrl, error }: PhotosProps) => {
+  const [photoError, setPhotoError] = useState<null | string>(error);
   const [loadedPhotos, setLoadedPhotos] = useState<Photo[]>(photos);
   const [loading, setLoading] = useState(false);
   const [moreToLoad, setMoreToLoad] = useState(true);
@@ -36,10 +38,20 @@ const Photos = ({ photos, apiUrl }: PhotosProps) => {
         setMoreToLoad(false);
       }
       setLoadedPhotos(loadedPhotos.concat(newPhotos));
-    } catch {}
+    } catch {
+      setPhotoError("Unable to fetch photos");
+    }
 
     setLoading(false);
   };
+
+  if (photoError) {
+    return (
+      <div className={styles.wrapper} title={photoError.toString()}>
+        <p>{photoError.toString()}</p>
+      </div>
+    );
+  }
 
   return (
     <InfiniteScroll
@@ -69,13 +81,21 @@ const Photos = ({ photos, apiUrl }: PhotosProps) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/photos?_limit=50`);
-  const photos = await res.json();
+  let error: string | null = null;
+  let photos = [];
+
+  try {
+    const res = await fetch(`${process.env.API_URL}/photos?_limit=50`);
+    photos = await res.json();
+  } catch (e) {
+    error = "Unable to fetch photos";
+  }
 
   return {
     props: {
       photos,
       apiUrl: process.env.API_URL,
+      error,
     },
   };
 }

@@ -12,25 +12,11 @@ const Navigtion = ({ appName }: NavigationProps): JSX.Element => {
       <div className={styles.container}>
         <div className={styles.header}>
           <Link href={"/"}>
-            <h1>{appName}</h1>
+            <h1 className={styles.appName}>{appName}</h1>
           </Link>
         </div>
 
-        <menu className={styles.actions}>
-          <Link href="/users">
-            <div className={styles.action}>
-              <span className="material-icons">supervisor_account</span>
-              <span>Users</span>
-            </div>
-          </Link>
-
-          <Link href="/albums">
-            <div className={styles.action}>
-              <span className="material-icons">collections</span>
-              <span>Albums</span>
-            </div>
-          </Link>
-        </menu>
+        <menu className={styles.actions}>{/** Add pages here */}</menu>
       </div>
     </nav>
   );
