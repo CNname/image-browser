@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Photo } from "../index";
 
 import layout from "../../styles/Layout.module.css";
+import Error from "../../components/Error/Error";
+import { httpStatusCodes } from "../../lib/consts";
 
 type PhotoProps = {
   photo?: Photo;
@@ -10,7 +12,14 @@ type PhotoProps = {
 
 const SinglePhoto = ({ photo, error }: PhotoProps) => {
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <div className={layout.page}>
+        <Error
+          code={httpStatusCodes.INTERNAL_SERVER_ERROR}
+          message={error.toString()}
+        />
+      </div>
+    );
   }
 
   if (!photo || !photo.thumbnailUrl) {
@@ -21,10 +30,6 @@ const SinglePhoto = ({ photo, error }: PhotoProps) => {
     <div className={layout.page}>
       <Image src={photo.url} alt={photo.title} height={600} width={600} />
       <h3>{photo.title}</h3>
-
-      <div>
-        <h4>Appears in album</h4>
-      </div>
     </div>
   );
 };

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-
 import Image from "next/image";
 import Link from "next/link";
+import Error from "../components/Error/Error";
+import { httpStatusCodes } from "../lib/consts";
 
 import layout from "../styles/Layout.module.css";
 import styles from "../styles/Photos.module.css";
@@ -48,7 +49,10 @@ const Photos = ({ photos, apiUrl, error }: PhotosProps) => {
   if (photoError) {
     return (
       <div className={styles.wrapper} title={photoError.toString()}>
-        <p>{photoError.toString()}</p>
+        <Error
+          code={httpStatusCodes.INTERNAL_SERVER_ERROR}
+          message={photoError.toString()}
+        />
       </div>
     );
   }

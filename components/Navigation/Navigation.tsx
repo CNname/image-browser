@@ -15,8 +15,6 @@ const Navigtion = ({ appName }: NavigationProps): JSX.Element => {
             <h1 className={styles.appName}>{appName}</h1>
           </Link>
         </div>
-
-        <menu className={styles.actions}>{/** Add pages here */}</menu>
       </div>
     </nav>
   );

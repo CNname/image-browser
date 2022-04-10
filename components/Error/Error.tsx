@@ -1,11 +1,18 @@
 import styles from "./error.module.css";
 
-export default function Error() {
+type ErrorProps = {
+  code: number;
+  message: string;
+};
+
+const Error = ({ code, message }: ErrorProps) => {
   return (
     <div className={styles.error}>
-      <h1>404</h1>
+      <h1>{code}</h1>
 
-      <p>Page Not Found</p>
+      <p>{message}</p>
     </div>
   );
-}
+};
+
+export default Error;
