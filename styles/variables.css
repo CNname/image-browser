@@ -1,5 +1,6 @@
 :root {
   --container-max-width: 1200px;
+  --space-s: 1rem;
   --space-m: 1.5rem;
   --space-ml: 2.5rem;
 

@@ -3,7 +3,7 @@
 }
 
 .title h3 {
-  margin-top: var(--space-s);
+  margin-top: 0;
 }
 
 @media screen and (max-width: 800px) {

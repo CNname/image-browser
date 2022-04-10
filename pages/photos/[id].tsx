@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Photo } from "../index";
 import NetworkError from "../../components/NetworkError";
+import HomeLink from "../../components/HomeLink";
 import { BLUR_DATA_URL, httpStatusCodes } from "../../lib/consts";
 
 import layout from "../../styles/Layout.module.css";
@@ -29,6 +30,7 @@ const SinglePhoto = ({ photo, error }: PhotoProps) => {
 
   return (
     <div className={layout.page}>
+      <HomeLink />
       <div className={layout.content}>
         <Image
           src={photo.url}

@@ -1,0 +1,7 @@
+.wrapper {
+  padding: var(--space-s) 0;
+}
+
+.wrapper a:hover {
+  color: var(--color-blue);
+}
