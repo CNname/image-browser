@@ -6,7 +6,7 @@ const ContentSecurityPolicy = `
   default-src 'self'; 
   script-src 'self' ${isProd ? "" : "'unsafe-eval'"};
   frame-ancestors 'none';
-  style-src 'self' 'unsafe-inline' https://phenomenal-bubblegum-0db0bd.netlify.app;
+  style-src 'self' 'unsafe-inline';
   font-src 'self';
   img-src 'self' https://via.placeholder.com data:;
   connect-src 'self' https://jsonplaceholder.typicode.com/;
