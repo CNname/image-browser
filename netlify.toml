@@ -6,11 +6,11 @@
   package = "@netlify/plugin-nextjs"
 
 [[headers]]
-  for = "/*"
+  for = "*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; frame-ancestors 'none'; style-src 'self' 'unsafe-inline' *phenomenal-bubblegum-0db0bd.netlify.app; font-src 'self'; img-src 'self' https://via.placeholder.com data:; connect-src 'self' https://jsonplaceholder.typicode.com/; form-action 'none'; base-uri 'none';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; frame-ancestors 'none'; style-src 'self' 'unsafe-inline' https://phenomenal-bubblegum-0db0bd.netlify.app; font-src 'self'; img-src 'self' https://via.placeholder.com data:; connect-src 'self' https://jsonplaceholder.typicode.com/; form-action 'none'; base-uri 'none';"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload;"
     Referrer-Policy = "same-origin"
