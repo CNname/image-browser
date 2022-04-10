@@ -2,3 +2,6 @@ export const httpStatusCodes = {
   INTERNAL_SERVER_ERROR: 500,
   NOT_FOUND: 404,
 };
+
+export const BLUR_DATA_URL =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN8/R8AAtsB7JKxzdUAAAAASUVORK5CYII=";

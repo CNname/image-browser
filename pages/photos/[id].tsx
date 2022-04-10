@@ -3,7 +3,7 @@ import { Photo } from "../index";
 
 import layout from "../../styles/Layout.module.css";
 import Error from "../../components/Error/Error";
-import { httpStatusCodes } from "../../lib/consts";
+import { BLUR_DATA_URL, httpStatusCodes } from "../../lib/consts";
 
 type PhotoProps = {
   photo?: Photo;
@@ -28,7 +28,14 @@ const SinglePhoto = ({ photo, error }: PhotoProps) => {
 
   return (
     <div className={layout.page}>
-      <Image src={photo.url} alt={photo.title} height={600} width={600} />
+      <Image
+        src={photo.url}
+        alt={photo.title}
+        height={600}
+        width={600}
+        placeholder="blur"
+        blurDataURL={BLUR_DATA_URL}
+      />
       <h3>{photo.title}</h3>
     </div>
   );

@@ -3,7 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Image from "next/image";
 import Link from "next/link";
 import Error from "../components/Error/Error";
-import { httpStatusCodes } from "../lib/consts";
+import { BLUR_DATA_URL, httpStatusCodes } from "../lib/consts";
 
 import layout from "../styles/Layout.module.css";
 import styles from "../styles/Photos.module.css";
@@ -75,6 +75,8 @@ const Photos = ({ photos, apiUrl, error }: PhotosProps) => {
               alt={photo.title}
               height={200}
               width={200}
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
             />
             <figcaption className={styles.caption}>{photo.title}</figcaption>
           </div>
