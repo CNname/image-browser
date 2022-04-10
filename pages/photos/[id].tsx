@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Photo } from "../index";
+import NetworkError from "../../components/NetworkError";
+import { BLUR_DATA_URL, httpStatusCodes } from "../../lib/consts";
 
 import layout from "../../styles/Layout.module.css";
-import Error from "../../components/Error/Error";
-import { BLUR_DATA_URL, httpStatusCodes } from "../../lib/consts";
+import styles from "../../styles/Photo.module.css";
 
 type PhotoProps = {
   photo?: Photo;
@@ -14,7 +15,7 @@ const SinglePhoto = ({ photo, error }: PhotoProps) => {
   if (error) {
     return (
       <div className={layout.page}>
-        <Error
+        <NetworkError
           code={httpStatusCodes.INTERNAL_SERVER_ERROR}
           message={error.toString()}
         />
@@ -28,15 +29,20 @@ const SinglePhoto = ({ photo, error }: PhotoProps) => {
 
   return (
     <div className={layout.page}>
-      <Image
-        src={photo.url}
-        alt={photo.title}
-        height={600}
-        width={600}
-        placeholder="blur"
-        blurDataURL={BLUR_DATA_URL}
-      />
-      <h3>{photo.title}</h3>
+      <div className={layout.content}>
+        <Image
+          src={photo.url}
+          alt={photo.title}
+          height={600}
+          width={600}
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
+        />
+        <div className={styles.title}>
+          <sup>Title</sup>
+          <h3>{photo.title}</h3>
+        </div>
+      </div>
     </div>
   );
 };

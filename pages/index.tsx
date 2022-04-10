@@ -2,7 +2,7 @@ import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Image from "next/image";
 import Link from "next/link";
-import Error from "../components/Error/Error";
+import NetworkError from "../components/NetworkError";
 import { BLUR_DATA_URL, httpStatusCodes } from "../lib/consts";
 
 import layout from "../styles/Layout.module.css";
@@ -48,8 +48,8 @@ const Photos = ({ photos, apiUrl, error }: PhotosProps) => {
 
   if (photoError) {
     return (
-      <div className={styles.wrapper} title={photoError.toString()}>
-        <Error
+      <div className={layout.page}>
+        <NetworkError
           code={httpStatusCodes.INTERNAL_SERVER_ERROR}
           message={photoError.toString()}
         />

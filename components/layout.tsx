@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Navigation from "./Navigation/Navigation";
-import Footer from "./Footer/Footer";
+import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 type LayoutProps = {
   children: JSX.Element;

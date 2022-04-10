@@ -10,3 +10,13 @@
   padding: var(--space-m);
   min-height: calc(100vh - var(--nav-height) - var(--footer-height));
 }
+
+.content {
+  display: flex;
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    flex-direction: column;
+  }
+}
